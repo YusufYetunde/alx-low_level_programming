@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * main - program to print sizeof various datatype
- *
- * Return : 0 (success)
+ *  * main - A program that prints a line with puts function
+ *   * Return: 0 (approve)
  */
+
 int main(void)
 {
 	char a;
