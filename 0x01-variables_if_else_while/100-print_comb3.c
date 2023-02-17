@@ -14,9 +14,9 @@ int main(void)
 	int c = 0;
 	int d = 0;
 
-	while (d < 10)
+	while (d < 100)
 	{
-		while (c < 10)
+		while (c < 100)
 		{
 			if (d != c && d < c)
 			{
