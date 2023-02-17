@@ -13,16 +13,15 @@ int main(void)
 {
 	int a = 0;
 
-	while (a <= 9)
+	for (a = 0; a < 100; a++)
 	{
 		putchar(a + '0');
-		a++;
-		if (a == 9)
-			break;
+		if (a < 99)
+		{
 		putchar(',');
 		putchar(' ');
+		}
 	}
-	putchar('9');
 	putchar('\n');
 	return (0);
 }
