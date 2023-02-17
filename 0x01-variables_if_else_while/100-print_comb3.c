@@ -14,21 +14,18 @@ int main(void)
 	int c = 0;
 	int d = 0;
 
-	while (c < 10)
+	while (d < 10)
 	{
-		if (d != c && d < c)
+		while (c < 10)
 		{
-			putchar(d + '0');
-			putchar(c + '0');
-
-			if (c + d != 17)
+			if (d != c && d < c)
 			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
-		c++;
 	}
+	c++;
 	d++;
 	putchar('\n');
 	return (0);
