@@ -12,8 +12,12 @@
 int main(void)
 {
 	char a;
-	for (a = 0; a <= 10; a++)
-		putchar(a);
+
+	while (c <= '9')
+	{
+		putchar(c);
+		c++;
+	}
 	putchar('\n');
 	return (0);
 }
