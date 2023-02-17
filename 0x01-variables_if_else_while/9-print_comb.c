@@ -13,15 +13,12 @@ int main(void)
 {
 	int a = 0;
 
-	while (a < 10)
+	while (a <= 5)
 	{
-		putchar(48 + a);
-		if (a != 10)
-		{
-			putchar(',');
-			putchar(' ');
-		}
+		putchar(a + '0');
 		a++;
+		putchar(',');
+		putchar(' ');
 	}
 	return (0);
 }
