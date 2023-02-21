@@ -1,15 +1,13 @@
 #include "main.h"
-/**
- * main - Entry level
- * Description: 'print_alphabet to print lowercase'
- * Return: Always  0 (approve)
- */
 
-void print_alphabet(void)
+/**
+ * print_alphabet_x10 - Prints 10 times the alphabet, in lowercase.
+ */
+void print_alphabet_x10(void)
 {
 	char c = 'a';
 
-	while (c <= 'z')
+	while (c < 'z')
 	{
 		_putchar(c);
 		c++;
