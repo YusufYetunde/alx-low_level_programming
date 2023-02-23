@@ -7,7 +7,7 @@
  */
 void print_number(int n)
 {
-	unsigned long m;
+	long m;
 	int c;
 	unsigned long num = n;
 
