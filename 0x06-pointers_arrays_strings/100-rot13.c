@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * print_number - Prints any integer with putchar
- * @n: Number to print
- *
- * Return: Nothing
+ * rot13 -  a   function that encodes a string using rot13.
+ * @s: An input string to encode using rot13
+ * Return: An encode string
  */
 char *rot13(char *s)
 {
