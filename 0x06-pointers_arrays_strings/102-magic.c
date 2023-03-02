@@ -1,9 +1,5 @@
 #include <stdio.h>
-/**
- * main - Entry level
- * Description: print magic by adding a line of code
- * Return: always (0)
- */
+
 int main(void)
 {
 	int n;
