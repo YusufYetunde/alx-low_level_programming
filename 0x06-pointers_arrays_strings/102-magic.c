@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * main - Entry level
+ * Description: magic function to print 98
+ * Return: Always (0) success
+ */
 int main(void)
 {
 	int n;
