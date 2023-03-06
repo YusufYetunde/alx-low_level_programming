@@ -1,14 +1,12 @@
-#include "main.h"
 #include <unistd.h>
+#include "main.h"
 /**
- * main - Entry level
- *
- * Description: 'program to save printf'
- *
- * Return: Always 0 (success)
+ * _putchar - writes the character c to stdout
+ * @c: character to print
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
-int putchar(char c)
+int _putchar(char c)
 {
-	return(write(1, &c ,1));
+	return (write(1, &c, 1));
 }
