@@ -1,11 +1,12 @@
 #include "main.h"
 /**
- * trspn -main entry.
+ * *_strspn -main entry.
  * @s:char pointer
  * @accept: char variable
  * Description:function that gets the length of a prefix substring.
  * Return:unsigned int
  */
+
 unsigned int _strspn(char *s, char *accept)
 {
 	int i, j, c = 0;
