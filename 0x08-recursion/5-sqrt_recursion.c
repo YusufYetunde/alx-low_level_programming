@@ -9,18 +9,16 @@
  */
 int find_square(int x, int y)
 {
-/**
- * sqr root of x is a y number mult by itself
- * sqr x = y * y;
-*/
+	/**
+	 * sqr root of x is a y number mult by itself
+	 * sqr x = y * y;
+	 */
 	int square = y * y;
 
 	if (square > x)
 		return (-1);
-
 	if (square == x)
 		return (y);
-
 	else
 		return (find_square(x, y + 1));
 }
