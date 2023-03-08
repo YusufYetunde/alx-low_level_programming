@@ -38,7 +38,9 @@ int p1(char *s, int l)
 
 /**
  * is_palindrome - palindrome
+ *
  * @s: pointer to string
+ *
  * Return: recursion
  */
 
