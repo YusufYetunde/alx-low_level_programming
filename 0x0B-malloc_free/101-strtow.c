@@ -1,45 +1,49 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * argstostr - concatenates all arguements of a program
- *
- * @ac:arguement count
- * @av:arguement vector
- *
- * Return:pointer to a new string
+ * strtow - splits a string into words.
+ * @str: string.
+ * Return: pointer of an array of integers
  */
-char *argstostr(int ac, char **av)
+char **strtow(char *str)
 {
-	int i = 0, j = 0, z = 0, length = 0;
-	char *p;
+	char **aout;
+	unsigned int c, height, i, j, a1;
 
-	if (ac == 0 || av == NULL)
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	for (c = height = 0; str[c] != '\0'; c++)
 	{
+		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
+			height++;
+	}
+	aout = malloc((height + 1) * sizeof(char *));
+	if (aout == NULL || height == 0)
+	{
+		free(aout);
 		return (NULL);
 	}
-	for (i = 0; i < ac; i++)
+	for (i = a1 = 0; i < height; i++)
 	{
-		for (j = 0; av[i][j]; j++)
+		for (c = a1; str[c] != '\0'; c++)
 		{
-			length++;
+			if (str[c] == ' ')
+				a1++;
+			if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
+			{
+				aout[i] = malloc((c - a1 + 2) * sizeof(char));
+				if (aout[i] == NULL)
+				{
+					ch_free_grid(aout, i);
+					return (NULL);
+				}
+				break;
+			}
 		}
-		length += 1;
+		for (j = 0; a1 <= c; a1++, j++)
+			aout[i][j] = str[a1];
+		aout[i][j] = '\0';
 	}
-	p = malloc((sizeof(char) * length) + 1);
-	if (p == NULL)
-	{
-		return (NULL);
-	}
-	for (i = 0; i < ac; i++)
-	{
-		for (j = 0; av[i][j]; j++)
-		{
-			p[z] = av[i][j];
-			z++;
-		}
-		p[z] = '\n';
-		z++;
-	}
-	p[z] = '\0';
-	return (p);
+	aout[i] = NULL;
+	return (aout);
 }
