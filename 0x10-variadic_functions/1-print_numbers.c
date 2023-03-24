@@ -12,6 +12,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list my_list;
 	unsigned int c;
 	int num;
+
 	va_start(my_list, n); /*Initialize the argument list*/
 
 	for (c = 0; c < n; c++)
