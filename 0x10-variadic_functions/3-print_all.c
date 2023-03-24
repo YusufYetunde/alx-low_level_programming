@@ -52,10 +52,6 @@ s = va_arg(list, char *);
  * print_all -function that prints anything.
  * @format: list of types of arguments passed to the function
  * Return: void
- **/
-/**
-* print_all - print char, integer, float and string
-* @format: format
 */
 void print_all(const char * const format, ...)
 {
