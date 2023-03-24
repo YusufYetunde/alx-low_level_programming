@@ -53,44 +53,50 @@ s = va_arg(list, char *);
  * @format: list of types of arguments passed to the function
  * Return: void
  **/
+/**
+* print_all - print char, integer, float and string
+* @format: format
+*/
 void print_all(const char * const format, ...)
 {
-	int c = 0, j;
-	va_list a_list;
-	char *sep = "";
+	va_list list;
+	unsigned int j = 0, start = 0;
+	char *p;
 
-/*arr_fmt array of type structure with typdef get_format*/
-
-	get_format arr_fmt[] = {
-		{"c", _printchar}, /*position 0 of arr_fmt*/
-		{"f", _printfloat}, /*position 1 of arr_fmt*/
-		{"s", _printstring}, /*s is member p_type in struct variadic.h*/
-		{"i", _printint},  /* _printin is member of *func in structure*/
-		{NULL, NULL}
-	};
-	va_start(a_list, format); /*Initialize the argument list*/
-
-/*format is the string "ceis"*/
-
-
-	while (format != NULL && format[c] != '\0')
+	va_start(list, format);
+	while (format && format[j] != '\0')
 	{
-
-		j = 0;
-		while (*(arr_fmt[j].func) != NULL)
-		{
-
-			if (format[c] == *(arr_fmt[j].p_type))
-			{
-				printf("%s", sep);
-				arr_fmt[j].func(a_list, sep);
-				sep = ", ";
-				break;
-			}
-			j++;
-		}
-		c++;
+		switch (format[j])
+		{ case 'c':
+			switch (start)
+			{ case 1: printf(", "); }
+			start = 1;
+			printf("%c", va_arg(list, int));
+			break;
+			case 'i':
+			switch (start)
+			{ case 1: printf(", "); }
+			start = 1;
+			printf("%i", va_arg(list, int));
+			break;
+		case 'f':
+			switch (start)
+			{ case 1: printf(", "); }
+			start = 1;
+			printf("%f", va_arg(list, double));
+			break;
+		case's':
+			switch (start)
+			{ case 1: printf(", "); }
+			start = 1;
+			p = va_arg(list, char*);
+			if (p)
+			{ printf("%s", p);
+			break; }
+			printf("%p", p);
+			break; }
+		j++;
 	}
 	printf("\n");
-	va_end(a_list);
+	va_end(list);
 }
