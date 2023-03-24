@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <stdarg.h>
+/**
+ * sum_them_all - sum of all its parameters
+ * @n: n args
+ * Return: The sum of parameters
+ */
 int sum_them_all(const unsigned int n, ...)
 {
 	int sum = 0;
