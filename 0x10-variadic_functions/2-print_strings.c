@@ -10,18 +10,27 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	va_list valist;
-	unsigned int i;
-	char *p;
-	va_start(valist, n);
+	va_list my_list;
+	unsigned int c;
+	char *word;
 
-	for (i = 0; i < n; i++)
+	va_start(my_list, n);
+
+	for (c = 0; c < n; c++)
 	{
-		if (separator != NULL && i != 0)
+		word = va_arg(my_list, char *);
+
+		if (word == NULL)
+		{
+			printf("(nil)");
+		}
+		else
+		{
+			printf("%s", word);
+		}
+		if (c < n - 1 && separator != NULL)
 			printf("%s", separator);
-		p = va_arg(valist, char *);
-		printf("%s", (p == NULL) ? "(nil)" : p);
 	}
+	va_end(my_list);
 	printf("\n");
-	va_end(valist);
 }
