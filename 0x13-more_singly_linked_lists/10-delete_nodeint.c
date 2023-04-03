@@ -1,9 +1,9 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * delete_nodeint_at_index - Delete a node at a given position
+ * delete_nodeint_at_index - Function to delete a node at a given position
  * @head: First node address
- * @index: Position of the node to be delete
+ * @index: Position of the node to be deleted
  * Return: If success (1)
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
