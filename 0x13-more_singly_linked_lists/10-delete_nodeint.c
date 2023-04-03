@@ -4,7 +4,7 @@
  * delete_nodeint_at_index - Function to delete a node at a given position
  * @head: First node address
  * @index: Position of the node to be deleted
- * Return: If success (1)
+ * Return: If success (1) otherwise (-1)
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
