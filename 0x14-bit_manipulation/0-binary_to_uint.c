@@ -14,18 +14,11 @@ unsigned int binary_to_uint(const char *b)
 		return (0);
 	while (b[count] != '\0')
 	{
-		if (b[count] == '0')
-		{
-			num <<= 1;
-		}
-		else if (b[count] == '1')
-		{
-			num = (num << 1) | 1;
-		}
-		else
+		if (b[count] < '0' || b[count] > '1')
 		{
 			return (0);
 		}
+		num = 2 * num + (b[count] - '0');
 		count++;
 	}
 	return (num);
