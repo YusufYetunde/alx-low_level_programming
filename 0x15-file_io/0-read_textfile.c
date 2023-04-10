@@ -8,21 +8,22 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	int fp;
+	char *buffer;
 	int x, y;
 
 	if (!filename)
 	{
 		return (0);
 	}
-	int fp = open(filename, O_RDONLY);
+	fp = open(filename, O_RDONLY);
 	if (fp < 0)
 	{
 		return (0);
 	}
-	char *buffer = malloc(sizeof(char) * letters);
+	buffer = malloc(sizeof(char) * letters);
 	if (!buffer)
 	{
-		close(fp);
 		return (0);
 	}
 	x = read(fp, buffer, letters);
@@ -34,7 +35,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	buffer[x] = '\0';
 	y = write(STDOUT_FILENO, buffer, x);
-	if (y == -1 || y != x)
+	if (y < 0)
 	{
 		close(fp);
 		free(buffer);
