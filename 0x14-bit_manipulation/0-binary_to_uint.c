@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>
+
 /**
  * binary_to_uint - Function to print binary
  * @b: point to string 0 and 1
@@ -10,7 +10,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int num = 0;
 	int count = 0;
 
-	if (b == NULL)
+	if (!b)
 		return (0);
 	while (b[count] != '\0')
 	{
