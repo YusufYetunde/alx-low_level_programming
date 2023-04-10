@@ -19,7 +19,7 @@ void exit_file(int exit_code, const char *format, const char *arg)
  * Return: Always 1 success
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv[])
 {
 	int fp_from, fp_to;
 	int x, y;
