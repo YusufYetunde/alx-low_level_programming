@@ -1,9 +1,5 @@
 #include "main.h"
 #include <stddef.h>
-#include <string.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <unistd.h>
 /**
  * create_file - function tgat create a file
  * @filename: file name
@@ -12,26 +8,29 @@
  */
 int create_file(const char *filename, char *text_content)
 {
+	int fp;
+	int y;
+
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	int fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
+	fp = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
 
-	if (fd == -1)
+	if (fp < 0)
 	{
 		return (-1);
 	}
 	if (text_content != NULL)
 	{
-		int bytes_written = write(fd, text_content, strlen(text_content));
+		y = write(fp, text_content, strlen(text_content));
 
-		if (bytes_written == -1)
+		if (y < 0)
 		{
-			close(fd);
+			close(fp);
 			return (-1);
 		}
 	}
-	close(fd);
+	close(fp);
 	return (1);
 }
