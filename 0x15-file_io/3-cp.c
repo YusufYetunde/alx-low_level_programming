@@ -2,7 +2,7 @@
 #define buffer_size 1024
 
 /**
- * exit - function to exit erro
+ * exit_file - function to exit error
  * @exit_code: code to exit
  * @format: format
  * @arg: arg
